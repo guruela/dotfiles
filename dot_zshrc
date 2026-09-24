@@ -1,0 +1,19 @@
+# .zshrc
+[[ -r ~/Git/znap/znap.zsh ]] ||
+    git clone --depth 1 -- \
+        https://github.com/marlonrichert/zsh-snap.git ~/Git/znap
+zstyle ':znap:*' repos-dir ~/Git/znap/plugins
+source ~/Git/znap/znap.zsh  # Start Znap
+
+znap prompt sindresorhus/pure
+
+source /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+znap source michel-kraemer/zsh-patina
+
+znap eval zoxide 'zoxide init --cmd cd zsh'
+znap eval mise 'mise activate zsh'
+
+alias ls='eza -l --icons=auto'
+alias la='ls -a'
+alias oc='opencode'
+alias ocs='source /Users/guruela/Git/fpga/oss-cad-suite/environment'
