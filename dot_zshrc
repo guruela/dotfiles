@@ -7,7 +7,11 @@ source ~/Git/znap/znap.zsh  # Start Znap
 
 znap prompt sindresorhus/pure
 
-source /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+if [[ "$(uname)" == "Linux" ]]; then
+    source /usr/share/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+else
+    source /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+fi
 znap source michel-kraemer/zsh-patina
 
 znap eval zoxide 'zoxide init --cmd cd zsh'
@@ -16,4 +20,4 @@ znap eval mise 'mise activate zsh'
 alias ls='eza -l --icons=auto'
 alias la='ls -a'
 alias oc='opencode'
-alias ocs='source /Users/guruela/Git/fpga/oss-cad-suite/environment'
+alias ocs='source $HOME/Git/fpga/oss-cad-suite/environment'
