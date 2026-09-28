@@ -8,4 +8,4 @@ else
   export XDG_CACHE_HOME="$HOME/Library/Caches"
 fi
 export XDG_STATE_HOME="$HOME/.local/state"
-
+export GOPATH="$HOME/.go"
