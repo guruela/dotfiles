@@ -16,6 +16,3 @@ macos-option-as-alt = true
 shell-integration-features = no-cursor
 cursor-style = block
 cursor-style-blink = true
-
-custom-shader = shaders/cursor_warp.glsl
-
