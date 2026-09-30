@@ -1,0 +1,7 @@
+device_name = "Compx Hydra  10 Keyboard"
+
+phys = "usb-0000:00:14.0-1.3/input0"
+
+[[remap]]
+input = ["KEY_CAPSLOCK"]
+output = ["KEY_LEFTCTRL"]
