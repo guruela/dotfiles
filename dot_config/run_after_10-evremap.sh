@@ -16,8 +16,11 @@ sudo install -Dm644 \
   "$EVREMAP_DIR/evremap.service" \
   /etc/systemd/system/evremap.service
 
-# Reload systemd after installing the service
-sudo systemctl daemon-reload
-
-# Enable the service
-sudo systemctl enable evremap.service
+# 4. Load the service if not already
+if ! systemctl is-enabled --quiet evremap.service 2>/dev/null; then
+  echo "service not enabled, enabling..."
+  sudo systemctl daemon-reload
+  sudo systemctl enable --now evremap.service
+else
+  echo "service already enabled, skipping..."
+fi
