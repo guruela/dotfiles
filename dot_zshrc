@@ -23,3 +23,7 @@ alias oc='opencode'
 alias ocs='source $HOME/Git/fpga/oss-cad-suite/environment'
 
 export PATH=$PATH:$HOME/.go/bin
+
+bindkey -e
+bindkey '^[[1;3D' backward-word
+bindkey '^[[1;3C' forward-word
