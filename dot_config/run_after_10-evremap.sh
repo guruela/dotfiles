@@ -11,8 +11,8 @@ fi
 
 # 2. Install remap configuration
 sudo install -Dm644 \
-  "$EVREMAP_DIR/remap.toml" \
-  /etc/remap.toml
+  "$EVREMAP_DIR/evremap.toml" \
+  /etc/evremap.toml
 
 # 3. Install systemd service
 sudo install -Dm644 \
