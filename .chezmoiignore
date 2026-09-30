@@ -2,4 +2,5 @@ README.md
 
 {{- if eq .chezmoi.os "darwin" }}
 dot_config/evremap
+dot_config/run_after_10-evremap.sh
 {{- end }}
