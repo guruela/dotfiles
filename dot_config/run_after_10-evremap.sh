@@ -4,10 +4,7 @@ set -e
 EVREMAP_DIR="$HOME/.local/share/chezmoi/dot_config/evremap"
 
 # 1. Install evremap-git
-if !command -v evremap &>/dev/null; then
-  echo "evremap not found, installing..."
-  yay -S --needed --noconfirm evremap-git
-fi
+yay -S --needed --noconfirm evremap-git
 
 # 2. Install remap configuration
 sudo install -Dm644 \
