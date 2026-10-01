@@ -13,20 +13,23 @@ fi
 echo "installing packages..."
 
 packages=(
-  git
-  github-cli
-  ghostty
-  neovim
-  tmux
-  zsh
-  ripgrep
+  eza
   fd
   fzf
-  eza
+  ghostty
+  git
+  github-cli
+  lazygit
+  neovim
+  nodejs
+  npm
+  opencode
+  ripgrep
+  tmux
   zoxide
+  zsh
   zsh-autocomplete
   zsh-patina-git
-  opencode
 )
 
 yay -S --needed --noconfirm "${packages[@]}"
