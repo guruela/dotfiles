@@ -7,9 +7,17 @@ EVREMAP_DIR="$HOME/.local/share/chezmoi/dot_config/evremap"
 yay -S --needed --noconfirm evremap-git
 
 # 2. Install remap configuration
-sudo install -Dm644 \
-  "$EVREMAP_DIR/evremap.toml" \
-  /etc/evremap.toml
+if [[ $(cat /etc/hostname) == "chromebook" ]]; then
+  echo "host is chromebook..."
+  sudo install -Dm644 \
+    "$EVREMAP_DIR/chromebook.toml" \
+    /etc/evremap.toml
+else
+  echo "host is mightytower..."
+  sudo install -Dm644 \
+    "$EVREMAP_DIR/mightytower.toml" \
+    /etc/evremap.toml
+fi
 
 # 3. Install systemd service
 sudo install -Dm644 \
