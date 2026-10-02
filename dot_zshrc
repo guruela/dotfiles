@@ -7,8 +7,10 @@ source ~/Git/znap/znap.zsh  # Start Znap
 
 znap prompt sindresorhus/pure
 
-if [[ "$(uname)" == "Linux" ]]; then
+if [[ "$(cat /etc/hostname)" == "mightytower" ]]; then
     source /usr/share/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+elif [[ "$(cat /etc/hostname)" == "raspberrypi" ]]; then
+    source "/home/linuxbrew/.linuxbrew/Cellar/zsh-autocomplete/26.08.04/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh"
 else
     source /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 fi
