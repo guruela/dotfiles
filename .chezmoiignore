@@ -5,3 +5,10 @@ README.md
 .config/evremap
 20-evremap.sh
 {{- end }}
+
+{{- if eq .chezmoi.hostname "pi" }}
+10-shell.sh
+.config/evremap
+20-evremap.sh
+{{- end }}
+
