@@ -6,7 +6,7 @@ README.md
 20-evremap.sh
 {{- end }}
 
-{{- if eq .chezmoi.hostname "pi" }}
+{{- if eq .chezmoi.hostname "raspberrypi" }}
 10-shell.sh
 .config/evremap
 20-evremap.sh
