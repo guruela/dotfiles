@@ -18,6 +18,7 @@ znap source michel-kraemer/zsh-patina
 
 znap eval zoxide 'zoxide init --cmd cd zsh'
 znap eval mise 'mise activate zsh'
+znap eval docker 'docker completion zsh'
 
 alias ls='eza -l --icons=auto'
 alias la='ls -a'
