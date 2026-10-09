@@ -1,4 +1,7 @@
 # .zshrc
+autoload -Uz compinit
+compinit
+
 [[ -r ~/Git/znap/znap.zsh ]] ||
     git clone --depth 1 -- \
         https://github.com/marlonrichert/zsh-snap.git ~/Git/znap
@@ -6,15 +9,9 @@ zstyle ':znap:*' repos-dir ~/Git/znap/plugins
 source ~/Git/znap/znap.zsh  # Start Znap
 
 znap prompt sindresorhus/pure
-
-if [[ -r /usr/share/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh ]]; then
-    source /usr/share/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-elif [[ -r /home/linuxbrew/.linuxbrew/Cellar/zsh-autocomplete/26.08.04/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh ]]; then
-    source /home/linuxbrew/.linuxbrew/Cellar/zsh-autocomplete/26.08.04/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-elif [[ -r /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh ]]; then
-    source /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-fi
 znap source michel-kraemer/zsh-patina
+
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 znap eval zoxide 'zoxide init --cmd cd zsh'
 znap eval docker 'docker completion zsh'
@@ -23,8 +20,6 @@ alias ls='eza -l --icons=auto'
 alias la='ls -a'
 alias oc='opencode'
 alias ocs='source $HOME/Git/fpga/oss-cad-suite/environment'
-
-export PATH=$PATH:$HOME/.go/bin
 
 bindkey -e
 bindkey '^[[1;3D' backward-word
