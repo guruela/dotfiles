@@ -10,8 +10,8 @@ source ~/Git/znap/znap.zsh  # Start Znap
 
 znap prompt sindresorhus/pure
 znap source michel-kraemer/zsh-patina
-
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+znap source zsh-users/zsh-autosuggestions
+znap source zsh-users/zsh-completions
 
 znap eval zoxide 'zoxide init --cmd cd zsh'
 znap eval docker 'docker completion zsh'
