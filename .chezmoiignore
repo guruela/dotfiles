@@ -1,4 +1,5 @@
 README.md
+.config/nvim/lazy-lock.json
 
 {{- if eq .chezmoi.os "darwin" }}
 10-shell.sh
