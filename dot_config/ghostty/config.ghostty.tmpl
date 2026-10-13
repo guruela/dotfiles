@@ -3,8 +3,6 @@ maximize = true
 window-padding-x = 14
 window-padding-y = 14
 
-font-size = 18
-
 theme = Dracula
 background = #000000
 
@@ -16,3 +14,9 @@ macos-option-as-alt = true
 shell-integration-features = no-cursor
 cursor-style = block
 cursor-style-blink = true
+
+{{ if eq .chezmoi.hostname "chromebook" -}}
+font-size = 15
+{{else -}}
+font-size = 18
+{{ end -}}
