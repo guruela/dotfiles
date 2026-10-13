@@ -9,6 +9,5 @@ else
 fi
 export XDG_STATE_HOME="$HOME/.local/state"
 export GOPATH="$HOME/.go"
-
 export PATH=$PATH:$HOME/.go/bin
-FPATH=/opt/homebrew/share/zsh-completions:$FPATH
+. "$HOME/.cargo/env"
