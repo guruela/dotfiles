@@ -13,6 +13,7 @@ fi
 echo "installing packages..."
 
 packages=(
+  cava
   eza
   fd
   fzf
