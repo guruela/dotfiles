@@ -1,9 +1,3 @@
-/* ════════════════════════════════════════════════════════════════
-   Waybar — wallpaper-driven palette
-   Colors are generated in styles/generated/colors.css by Wallust.
-   Blur is applied by the compositor — see config.jsonc header.
-   ════════════════════════════════════════════════════════════════ */
-
 @import url("styles/generated/colors.css");
 @import url("styles/state/sliders.css");
 
@@ -23,7 +17,6 @@ window#waybar {
   box-shadow: 0 4px 14px @bar_shadow;
 }
 
-/* ── tooltips ──────────────────────────────────────────────────── */
 tooltip {
   background-color: @tooltip_bg;
   border-radius: 10px;
@@ -34,7 +27,6 @@ tooltip label {
   padding: 8px;
 }
 
-/* ── workspaces ────────────────────────────────────────────────── */
 #workspaces {
   margin: 4px 6px;
   padding: 2px;
@@ -53,30 +45,16 @@ tooltip label {
   transition: color 240ms ease-out, background-color 240ms ease-out, text-shadow 240ms ease-out;
 }
 #workspaces button:hover,
-#workspaces button.workspace-hover,
 #workspaces button.empty:hover,
-#workspaces button.empty.workspace-hover,
 #workspaces button.persistent:hover,
-#workspaces button.persistent.workspace-hover,
 #workspaces button.visible:hover,
-#workspaces button.visible.workspace-hover,
 #workspaces button.active,
-#workspaces button.active:hover,
-#workspaces button.active.workspace-hover {
+#workspaces button.active:hover {
   color: @accent_fg;
   background: @accent;
   background-image: none;
   box-shadow: none;
   text-shadow: none;
-}
-#workspaces button.empty {
-  color: @text_disabled;
-}
-#workspaces button.active.empty,
-#workspaces button.active.empty:hover,
-#workspaces button.active.empty.workspace-hover {
-  color: @accent_fg;
-  background: @accent;
 }
 #workspaces button.urgent,
 #workspaces button.urgent:hover {
@@ -85,14 +63,12 @@ tooltip label {
   text-shadow: none;
 }
 
-/* ── window title ──────────────────────────────────────────────── */
 #window {
   margin: 0 2px;
   padding: 0 10px;
   color: @text_secondary;
 }
 
-/* ── media: visualizer + mpris ─────────────────────────────────── */
 #custom-visualizer {
   margin: 0 2px;
   padding: 0 8px;
@@ -109,7 +85,6 @@ tooltip label {
 #mpris.paused  { color: @text_secondary; }
 #mpris.stopped { color: @text_inactive; }
 
-/* ── sliders + status icons ────────────────────────────────────── */
 #custom-sliders-toggle, #pulseaudio, #backlight, #network, #bluetooth, #battery {
   margin: 0 2px;
   padding: 0 6px;
@@ -181,7 +156,6 @@ tooltip label {
   background-color: @danger;
 }
 
-/* ── tray + clock ──────────────────────────────────────────────── */
 #tray {
   margin: 0 2px;
   padding: 0 8px;

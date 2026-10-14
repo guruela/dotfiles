@@ -13,7 +13,7 @@ fi
 echo "installing packages..."
 
 packages=(
-  cava
+  command-code
   eza
   fd
   fzf
@@ -29,16 +29,7 @@ packages=(
   tmux
   zoxide
   zsh
-  zsh-autocomplete
   zsh-patina-git
 )
 
 yay -S --needed --noconfirm "${packages[@]}"
-
-# 3. Install commandcode
-if ! command -v cmd % >/dev/null; then
-  echo "commandcode not installed...installing"
-  sudo npm i -g command-code@latest
-else
-  echo "commandcode installed....skipping"
-fi

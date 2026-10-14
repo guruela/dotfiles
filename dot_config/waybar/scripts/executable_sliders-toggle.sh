@@ -1,10 +1,4 @@
 #!/usr/bin/env bash
-# Collapse/expand the volume + brightness sliders.
-#
-#   sliders-toggle.sh state   -> prints indicator module JSON
-#   sliders-toggle.sh toggle  -> flips styles/state/sliders.css and hot-reloads bar css
-#
-# State lives in styles/state/sliders.css itself: a "collapsed" marker = hidden.
 
 DIR="$HOME/.config/waybar"
 CSS="$DIR/styles/state/sliders.css"
@@ -41,24 +35,24 @@ window#waybar #backlight-slider highlight {
 CSS
 
 is_collapsed() {
-    grep -q "collapsed" "$CSS" 2>/dev/null
+  grep -q "collapsed" "$CSS" 2>/dev/null
 }
 
 case "${1:-state}" in
-    toggle)
-        if is_collapsed; then
-            : > "$CSS.tmp" && mv "$CSS.tmp" "$CSS"
-        else
-            printf '%s\n' "$COLLAPSE_RULES" > "$CSS.tmp" && mv "$CSS.tmp" "$CSS"
-        fi
-        touch "$MAIN"  # mtime bump -> waybar reloads the stylesheet
-        pkill -RTMIN+8 waybar 2>/dev/null || true
-        ;;
-    *)
-        if is_collapsed; then
-            printf '{"text": "", "class": "collapsed", "tooltip": "Show sliders"}\n'
-        else
-            printf '{"text": "", "class": "expanded", "tooltip": "Hide sliders"}\n'
-        fi
-        ;;
+toggle)
+  if is_collapsed; then
+    : >"$CSS.tmp" && mv "$CSS.tmp" "$CSS"
+  else
+    printf '%s\n' "$COLLAPSE_RULES" >"$CSS.tmp" && mv "$CSS.tmp" "$CSS"
+  fi
+  touch "$MAIN" # mtime bump -> waybar reloads the stylesheet
+  pkill -RTMIN+8 waybar 2>/dev/null || true
+  ;;
+*)
+  if is_collapsed; then
+    printf '{"text": "", "class": "collapsed", "tooltip": "Show sliders"}\n'
+  else
+    printf '{"text": "", "class": "expanded", "tooltip": "Hide sliders"}\n'
+  fi
+  ;;
 esac
