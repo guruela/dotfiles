@@ -1,6 +1,7 @@
 README.md
 .config/nvim/lazy-lock.json
 **/.commandcode/**
+**/generated/**
 
 {{- if eq .chezmoi.os "darwin" }}
 .config/evremap
