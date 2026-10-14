@@ -6,8 +6,8 @@ export XDG_STATE_HOME="$HOME/.local/state"
 export GOPATH="$HOME/.go"
 export PATH=$PATH:$HOME/.go/bin
 {{- if eq .chezmoi.os "linux" }}
- export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_CACHE_HOME="$HOME/.cache"
 {{- else if eq .chezmoi.os "darwin" }}
- export XDG_CACHE_HOME="$HOME/Library/Caches"
+export XDG_CACHE_HOME="$HOME/Library/Caches"
 {{- end }}
 . "$HOME/.cargo/env"
