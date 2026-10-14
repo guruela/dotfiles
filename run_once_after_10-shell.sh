@@ -33,3 +33,11 @@ packages=(
 )
 
 yay -S --needed --noconfirm "${packages[@]}"
+
+# 3. Install commandcode
+if ! command -v cmd % >/dev/null; then
+  echo "commandcode not installed...installing"
+  sudo npm i -g command-code@latest
+else
+  echo "commandcode installed....skipping"
+fi
