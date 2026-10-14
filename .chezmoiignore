@@ -1,7 +1,8 @@
 README.md
-.config/nvim/lazy-lock.json
+**/lazy-lock.json/**
 **/.commandcode/**
 **/generated/**
+**/wallpaper.conf/**
 
 {{- if eq .chezmoi.os "darwin" }}
 .config/evremap
