@@ -1,15 +1,22 @@
 README.md
 .config/nvim/lazy-lock.json
+**/.commandcode/**
 
 {{- if eq .chezmoi.os "darwin" }}
-10-shell.sh
 .config/evremap
+.config/hypr
+.config/wallust
+.config/waybar
+10-shell.sh
 20-evremap.sh
 {{- end }}
 
 {{- if eq .chezmoi.hostname "raspberrypi" }}
-10-shell.sh
 .config/evremap
+.config/hypr
+.config/wallust
+.config/waybar
+10-shell.sh
 20-evremap.sh
 {{- end }}
 
