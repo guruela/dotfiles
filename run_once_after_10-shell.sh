@@ -13,6 +13,7 @@ fi
 echo "installing packages..."
 
 packages=(
+  command-code
   eza
   fd
   fzf
@@ -28,7 +29,6 @@ packages=(
   tmux
   zoxide
   zsh
-  zsh-autocomplete
   zsh-patina-git
 )
 
