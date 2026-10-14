@@ -102,7 +102,7 @@
   },
   "network": {
     "format-wifi": "\uf1eb",
-    "format-ethernet": "\uf6ff",
+    "format-ethernet": "\uef44",
     "format-disconnected": "",
     "tooltip-format-wifi": "{essid} ({signalStrength}%) · {ipaddr}",
     "tooltip-format-ethernet": "{ifname} · {ipaddr}/{cidr}",
