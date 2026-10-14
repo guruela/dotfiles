@@ -1,0 +1,8 @@
+backend = "fastresize"
+palette = "kmeans"
+style = "dark"
+check_contrast = true
+saturation = 48
+
+[templates]
+waybar = { template = "waybar-colors.css", target = "~/.cache/wallust/waybar-colors.css" }
