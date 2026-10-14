@@ -7,6 +7,7 @@ README.md
 .config/evremap
 .config/waybar
 .config/hypr
+.config/wallust
 20-evremap.sh
 {{- end }}
 
@@ -15,6 +16,7 @@ README.md
 .config/evremap
 .config/waybar
 .config/hypr
+.config/wallust
 20-evremap.sh
 {{- end }}
 
