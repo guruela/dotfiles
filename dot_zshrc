@@ -15,6 +15,7 @@ znap source zsh-users/zsh-completions
 
 znap eval zoxide 'zoxide init --cmd cd zsh'
 znap eval docker 'docker completion zsh'
+znap eval herdr 'herdr completion zsh'
 
 alias ls='eza -l --icons=auto'
 alias la='ls -a'
