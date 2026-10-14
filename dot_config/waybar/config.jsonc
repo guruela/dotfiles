@@ -1,0 +1,163 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 34,
+  "margin-top": 8,
+  "margin-left": 12,
+  "margin-right": 12,
+  "spacing": 0,
+  "reload_style_on_change": true,
+  "modules-left": [
+    "hyprland/workspaces",
+    "hyprland/window"
+  ],
+  "modules-center": [
+    "custom/visualizer",
+    "mpris"
+  ],
+  "modules-right": [
+    "custom/sliders-toggle",
+    "pulseaudio",
+    "pulseaudio/slider",
+    "backlight",
+    "backlight/slider",
+    "network",
+    "bluetooth",
+    "battery#icon",
+    "battery#percentage",
+    "tray",
+    "clock"
+  ],
+  "hyprland/workspaces": {
+    "format": "{name}",
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": []
+    }
+  },
+  "hyprland/window": {
+    "max-length": 40,
+    "separate-outputs": true
+  },
+  "custom/visualizer": {
+    "exec": "$HOME/.config/waybar/scripts/visualizer.sh",
+    "restart-interval": 5,
+    "tooltip": false
+  },
+  "custom/sliders-toggle": {
+    "exec": "$HOME/.config/waybar/scripts/sliders-toggle.sh state",
+    "return-type": "json",
+    "interval": 2,
+    "signal": 8,
+    "on-click": "$HOME/.config/waybar/scripts/sliders-toggle.sh toggle"
+  },
+  "mpris": {
+    "format": "{status_icon}  {dynamic}",
+    "format-paused": "{status_icon}  <i>{dynamic}</i>",
+    "format-stopped": "{status_icon}",
+    "status-icons": {
+      "playing": "\uf04b",
+      "paused": "\uf04c",
+      "stopped": "\uf001"
+    },
+    "dynamic-order": [
+      "title",
+      "artist"
+    ],
+    "dynamic-len": 46,
+    "title-len": 26,
+    "artist-len": 18,
+    "tooltip-format": "<b>{title}</b>\n{artist} — {album}\n<i>{player}</i>"
+  },
+  "pulseaudio": {
+    "format": "{icon}",
+    "format-muted": "\uf026",
+    "format-icons": {
+      "headphone": "\uf025",
+      "default": [
+        "\uf027",
+        "\uf028"
+      ]
+    },
+    "tooltip-format": "Volume: {volume}%",
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+  },
+  "pulseaudio/slider": {
+    "min": 0,
+    "max": 100,
+    "orientation": "horizontal"
+  },
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{icon}",
+    "format-icons": [
+      "\uf185"
+    ],
+    "tooltip-format": "Brightness: {percent}%"
+  },
+  "backlight/slider": {
+    "min": 5,
+    "max": 100,
+    "device": "intel_backlight",
+    "orientation": "horizontal"
+  },
+  "network": {
+    "format-wifi": "\uf1eb",
+    "format-ethernet": "\uef44",
+    "format-disconnected": "",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%) · {ipaddr}",
+    "tooltip-format-ethernet": "{ifname} · {ipaddr}/{cidr}",
+    "tooltip-format-disconnected": "Disconnected",
+    "on-click": "nm-connection-editor",
+    "on-click-middle": "nmcli radio wifi | grep -q enabled && nmcli radio wifi off || nmcli radio wifi on"
+  },
+  "bluetooth": {
+    "format": "\uf293",
+    "format-disabled": "",
+    "format-connected": "\uf293",
+    "tooltip-format": "Bluetooth · {controller_alias}",
+    "tooltip-format-connected": "{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}",
+    "on-click": "ghostty -e bluetoothctl",
+    "on-click-middle": "bluetoothctl show | grep -q 'Powered: yes' && bluetoothctl power off || bluetoothctl power on"
+  },
+  "battery#icon": {
+    "states": {
+      "warning": 20,
+      "critical": 10
+    },
+    "format": "{icon}",
+    "format-charging": "\uf0e7",
+    "format-plugged": "\uf1e6",
+    "format-icons": [
+      "\uf244",
+      "\uf243",
+      "\uf242",
+      "\uf241",
+      "\uf240"
+    ],
+    "tooltip-format": "{capacity}% · {timeTo}"
+  },
+  "battery#percentage": {
+    "states": {
+      "warning": 20,
+      "critical": 10
+    },
+    "format": "{capacity}%",
+    "format-charging": "{capacity}%",
+    "format-plugged": "{capacity}%",
+    "tooltip": false
+  },
+  "tray": {
+    "icon-size": 15,
+    "spacing": 6
+  },
+  "clock": {
+    "format": "\uf017  {:%I:%M %p}",
+    "format-alt": "\uf017  {:%a %d %b  %I:%M %p}",
+    "tooltip-format": "<big>{:%A, %d %B %Y}</big>\n<tt><small>{calendar}</small></tt>"
+  }
+}
