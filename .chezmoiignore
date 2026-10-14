@@ -5,12 +5,16 @@ README.md
 {{- if eq .chezmoi.os "darwin" }}
 10-shell.sh
 .config/evremap
+.config/waybar
+.config/hypr
 20-evremap.sh
 {{- end }}
 
 {{- if eq .chezmoi.hostname "raspberrypi" }}
 10-shell.sh
 .config/evremap
+.config/waybar
+.config/hypr
 20-evremap.sh
 {{- end }}
 
