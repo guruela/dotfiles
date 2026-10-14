@@ -2,12 +2,12 @@ export EDITOR=nvim
 export LESSHISTFILE=-
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
-if [[ "$(uname)" == "Linux" ]]; then
-  export XDG_CACHE_HOME="$HOME/.cache"
-else
-  export XDG_CACHE_HOME="$HOME/Library/Caches"
-fi
 export XDG_STATE_HOME="$HOME/.local/state"
 export GOPATH="$HOME/.go"
 export PATH=$PATH:$HOME/.go/bin
+{{- if eq .chezmoi.os "linux" }}
+ export XDG_CACHE_HOME="$HOME/.cache"
+{{- else if eq .chezmoi.os "darwin" }}
+ export XDG_CACHE_HOME="$HOME/Library/Caches"
+{{- end }}
 . "$HOME/.cargo/env"
