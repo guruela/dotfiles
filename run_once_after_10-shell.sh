@@ -13,6 +13,8 @@ fi
 echo "installing packages..."
 
 packages=(
+  batctl-tui
+  bluetui
   command-code
   eza
   fd
@@ -27,6 +29,7 @@ packages=(
   opencode
   ripgrep
   tmux
+  wifitui-bin
   zoxide
   zsh
   zsh-patina-git
