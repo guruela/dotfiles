@@ -111,8 +111,7 @@
     "tooltip-format-wifi": "{essid} ({signalStrength}%) · {ipaddr}",
     "tooltip-format-ethernet": "{ifname} · {ipaddr}/{cidr}",
     "tooltip-format-disconnected": "Disconnected",
-    "on-click": "nm-connection-editor",
-    "on-click-middle": "nmcli radio wifi | grep -q enabled && nmcli radio wifi off || nmcli radio wifi on"
+    "on-click": "ghostty --class=ghostty.wifitui -e wifitui",
   },
   "bluetooth": {
     "format": "\uf293",
@@ -121,8 +120,7 @@
     "tooltip-format": "Bluetooth · {controller_alias}",
     "tooltip-format-connected": "{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}",
-    "on-click": "ghostty -e bluetoothctl",
-    "on-click-middle": "bluetoothctl show | grep -q 'Powered: yes' && bluetoothctl power off || bluetoothctl power on"
+    "on-click": "ghostty --class=ghostty.bluetui -e bluetui",
   },
   "battery#icon": {
     "states": {
@@ -139,7 +137,8 @@
       "\uf241",
       "\uf240"
     ],
-    "tooltip-format": "{capacity}% · {timeTo}"
+    "tooltip-format": "{capacity}% · {timeTo}",
+    "on-click": "ghostty --class=ghostty.batctl -e batctl"
   },
   "battery#percentage": {
     "states": {
