@@ -8,6 +8,7 @@
   "spacing": 0,
   "reload_style_on_change": true,
   "modules-left": [
+    "custom/arch",
     "hyprland/workspaces",
     "hyprland/window"
   ],
@@ -26,8 +27,19 @@
     "battery#icon",
     "battery#percentage",
     "tray",
-    "clock"
+    "clock",
+    "custom/power"
   ],
+  "custom/arch": {
+    "format": "\uf303",
+    "tooltip": false,
+    "on-click": "vicinae toggle"
+  },
+  "custom/power": {
+    "format": "\uf011",
+    "tooltip": false,
+    "on-click": "ghostty --class=ghostty.powermenu -e $HOME/.config/waybar/scripts/power-menu.sh"
+  },
   "hyprland/workspaces": {
     "format": "{name}",
     "persistent-workspaces": {

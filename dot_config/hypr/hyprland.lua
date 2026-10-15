@@ -24,7 +24,8 @@ hl.monitor({
 -- Set programs that you use
 local terminal = "ghostty"
 local fileManager = "dolphin"
-local menu = "hyprlauncher"
+local menu = "vicinae toggle"
+local browser = "helium-browser"
 
 -------------------
 ---- AUTOSTART ----
@@ -37,6 +38,7 @@ local menu = "hyprlauncher"
 --
 hl.on("hyprland.start", function()
 	hl.exec_cmd("waybar & hyprpaper")
+	hl.exec_cmd("vicinae server")
 	-- hl.exec_cmd("nm-applet")
 	-- hl.exec_cmd("waybar & hyprpaper & firefox")
 end)
@@ -74,6 +76,16 @@ hl.env("GDK_WAYLAND_DISABLE", "ext_background_effect_manager_v1")
 -----------------------
 
 -- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
+local borderColors = {
+	active_border = { colors = { "rgba(33ccffee)", "rgba(00ff99ee)" }, angle = 45 },
+	inactive_border = "rgba(595959aa)",
+}
+
+local loadedBorderColors, generatedBorderColors = pcall(require, "generated.border_colors")
+if loadedBorderColors then
+	borderColors = generatedBorderColors
+end
+
 hl.config({
 	general = {
 		gaps_in = 5,
@@ -81,10 +93,7 @@ hl.config({
 
 		border_size = 2,
 
-		col = {
-			active_border = { colors = { "rgba(33ccffee)", "rgba(00ff99ee)" }, angle = 45 },
-			inactive_border = "rgba(595959aa)",
-		},
+		col = borderColors,
 
 		-- Set to true to enable resizing windows by clicking and dragging on borders and gaps
 		resize_on_border = false,
@@ -246,6 +255,7 @@ local mainMod = "ALT" -- Sets "Windows" key as main modifier
 
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
+hl.bind(mainMod .. " + SHIFT + Return", hl.dsp.exec_cmd(browser))
 local closeWindowBind = hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 -- closeWindowBind:set_enabled(false)
 hl.bind(
@@ -371,7 +381,7 @@ hl.window_rule({
 hl.window_rule({
 	name = "bluetooth settings",
 	match = {
-		class = "^(ghostty.bluetui|ghostty.wifitui|ghostty.batctl)$",
+		class = "^(ghostty.bluetui|ghostty.wifitui|ghostty.batctl|ghostty.powermenu)$",
 	},
 	float = true,
 })

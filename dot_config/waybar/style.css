@@ -146,14 +146,17 @@ tooltip label {
   min-width: 100px;
   border-radius: 3px;
   background-color: @slider_track;
+  background-image: none;
 }
 #pulseaudio-slider highlight, #backlight-slider highlight {
   min-height: 6px;
   border-radius: 3px;
   background-color: @accent;
+  background-image: none;
 }
 #pulseaudio-slider.muted highlight {
   background-color: @danger;
+  background-image: none;
 }
 
 #tray {
@@ -166,4 +169,20 @@ tooltip label {
   background-color: @surface_subtle;
   border-radius: 12px;
   font-weight: 700;
+}
+#custom-arch, #custom-power {
+  min-width: 26px;
+  min-height: 26px;
+  margin: 4px 6px;
+  padding: 0;
+  background-color: @surface_subtle;
+  border-radius: 13px;
+  color: @accent;
+  font-size: 13px;
+  font-weight: 700;
+  transition: color 150ms ease, background-color 150ms ease;
+}
+#custom-arch:hover, #custom-power:hover {
+  color: @accent_fg;
+  background-color: @accent;
 }
