@@ -9,5 +9,11 @@ export PATH=$PATH:$HOME/.go/bin
 export XDG_CACHE_HOME="$HOME/.cache"
 {{- else if eq .chezmoi.os "darwin" }}
 export XDG_CACHE_HOME="$HOME/Library/Caches"
+
+# Homebrew
+export HOMEBREW_NO_ENV_HINTS=1
+export HOMEBREW_NO_ANALYTICS=1
 {{- end }}
+
+# Cargo
 . "$HOME/.cargo/env"
