@@ -11,6 +11,7 @@ README.md
 .config/waybar
 10-shell.sh
 20-evremap.sh
+mklink.sh
 {{- end }}
 
 {{- if eq .chezmoi.hostname "raspberrypi" }}
